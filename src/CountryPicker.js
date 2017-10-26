@@ -99,6 +99,18 @@ export default class CountryPicker extends Component {
       </View>
     )
   }
+  
+  static renderCountry(country, index) {
+    return (
+      <TouchableOpacity
+        key={index}
+        onPress={() => this.onSelectCountry(country)}
+        activeOpacity={0.99}
+      >
+        {this.renderCountryDetail(country)}
+      </TouchableOpacity>
+    )
+  }
 
   constructor(props) {
     super(props)
